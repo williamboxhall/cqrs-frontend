@@ -12,26 +12,39 @@
 
             <div class="control-group" ng-class="{error: registerPerson.title.$invalid}">
                 <label>Title</label>
-                <input type="text" name="title" ng-model="person.title" required>
+                <input type="text" name="title" ng-model="person.title" placeholder="Enter your title" required>
                 <span ng-show="registerPerson.title.$error.required" class="help-inline">Required</span>
             </div>
 
             <div class="control-group" ng-class="{error: registerPerson.firstName.$invalid}">
                 <label>First name</label>
-                <input type="text" name="title" ng-model="person.firstName" required>
+                <input type="text" name="firstName" ng-model="person.firstName" placeholder="Enter your first name" required>
                 <span ng-show="registerPerson.firstName.$error.required" class="help-inline">Required</span>
             </div>
 
             <div class="control-group" ng-class="{error: registerPerson.lastName.$invalid}">
                 <label>Last name</label>
-                <input type="text" name="title" ng-model="person.lastName" required>
+                <input type="text" name="lastName" ng-model="person.lastName" placeholder="Enter your last name" required>
                 <span ng-show="registerPerson.lastName.$error.required" class="help-inline">Required</span>
             </div>
 
-            <div class="control-group" ng-class="{error: registerPerson.lastName.$invalid}">
+            <div class="control-group" ng-class="{error: registerPerson.gender.$invalid}">
                 <label>Gender</label>
-                <input type="text" name="title" ng-model="person.lastName" required>
-                <span ng-show="registerPerson.lastName.$error.required" class="help-inline">Required</span>
+                <select ng-model="person.gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="hermaphrodite">Hermaphrodite</option>
+                    <option value="transgender">Transgender</option>
+                    <option value="abstain">Abstain</option>
+                </select>
+                <span ng-show="registerPerson.gender.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="control-group" ng-class="{error: registerPerson.birthday.$invalid}">
+                <label>Birthday</label>
+                <input type="date" name="birthday" ng-model="person.birthday" required>
+                <span ng-show="registerPerson.birthday.$error.required" class="help-inline">Required</span>
             </div>
 
             <div class="control-group">
@@ -39,10 +52,8 @@
             </div>
 
             <a href="#/" class="btn">Cancel</a>
-            <button ng-click="save()" ng-disabled="myForm.$invalid"
-            class="btn btn-primary">Register
-        </button>
-    </form>
-</div>
+            <button ng-click="save()" ng-disabled="registerPerson.$invalid" class="btn btn-primary">Register</button>
+        </form>
+    </div>
 </body>
 </html>
