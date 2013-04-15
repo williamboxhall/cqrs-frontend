@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+</head>
+<body>
+    <div>
+        <h1>Register Person</h1>
+
+        <form name="registerPerson">
+
+            <div class="control-group" ng-class="{error: registerPerson.title.$invalid}">
+                <label>Title</label>
+                <input type="text" name="title" ng-model="person.title" required>
+                <span ng-show="registerPerson.title.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="control-group" ng-class="{error: registerPerson.firstName.$invalid}">
+                <label>First name</label>
+                <input type="text" name="title" ng-model="person.firstName" required>
+                <span ng-show="registerPerson.firstName.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="control-group" ng-class="{error: registerPerson.lastName.$invalid}">
+                <label>Last name</label>
+                <input type="text" name="title" ng-model="person.lastName" required>
+                <span ng-show="registerPerson.lastName.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="control-group" ng-class="{error: registerPerson.lastName.$invalid}">
+                <label>Gender</label>
+                <input type="text" name="title" ng-model="person.lastName" required>
+                <span ng-show="registerPerson.lastName.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="control-group">
+                <span>{{person.title}} {{person.firstName}} {{person.lastName}}</span>
+            </div>
+
+            <a href="#/" class="btn">Cancel</a>
+            <button ng-click="save()" ng-disabled="myForm.$invalid"
+            class="btn btn-primary">Register
+        </button>
+    </form>
+</div>
+</body>
+</html>
